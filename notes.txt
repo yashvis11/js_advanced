@@ -1,0 +1,33 @@
+Synchronous nature of JS means everything executes line-by-line.
+
+Example:
+console.log("Yashvi");  //this will execute first as it comes first in the order of lines
+for(int i=0;i<10;i++){  //execute second 
+    console.log(i);
+}
+
+Asynchrnous nature: Ability to have a pause in the execution of the language or the code
+All languages do have this but needs to be explicitly imported in JS
+Example: For network calls(calls from one country to another)
+write and reading files from disk
+
+Asynchronous workflow:
+
+JS components involved in this
+Code file
+Call Stack
+Event loop
+Environment - Browser, node, etc.
+Queues: callback queue, or vip queue
+
+Workflow:
+
+Code file methods are passed to the call stack for execution, the event loop checks if the stack has any functions
+and executes them if it js has the capabilities(this is for regular function)
+
+Time functions: JS does not have the capabilities to execute time functions, so the method passes from the
+stack to the environment, like node and browser which has the capability. After which the function is moved
+to the queue and executed by the event loop. Meanwhile if there is another function in the stack which is 
+not a time function the loop will execute that till the prior function goes into the queue. 
+
+This is why the order of the code does not matter with time functions.
