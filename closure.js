@@ -5,6 +5,7 @@ Example workflow if closure did not exist: When the control sees closure = outer
 outerVar will not be found and a reference error will occur at console.log(outerVar);
 
 Clousre allows the control to know that the execution context needs to be saved to the Heap for future calls and does not destroy the memory*/
+
 function outer() {
   let outerVar = "This is the outer scope";
   function inner() {
@@ -16,7 +17,5 @@ function outer() {
 
 const closure = outer();
 closure();
-closure();
-closure();
-closure();
+
 
